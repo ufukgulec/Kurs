@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 
 namespace Kurs.Dal.Concrete.EntityFramework.Repository
 {
-    public abstract class EfGenericRepository<T> : IGenericRepository<T> where T : class
+    public class EfGenericRepository<T> : IGenericRepository<T> where T : class
     {
         public KursContext _context;
         /// <summary>

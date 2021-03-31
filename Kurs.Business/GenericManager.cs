@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Kurs.Business
 {
-    public abstract class GenericManager<T> : IGenericService<T>
+    public class GenericManager<T> : IGenericService<T>
     {
         private readonly IGenericRepository<T> _genericRepository;
 
