@@ -41,7 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IGenericService.cs" />
+    <Compile Include="IStudentService.cs" />
+    <Compile Include="ITeacherService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kurs.Entities\Kurs.Entities.csproj">
+      <Project>{211b786c-8ec1-4e7b-8ee2-600e9737f81f}</Project>
+      <Name>Kurs.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
