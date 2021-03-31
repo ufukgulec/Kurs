@@ -7,8 +7,7 @@ namespace Kurs.Dal.Concrete.EntityFramework.Context
 {
     public partial class KursContext : DbContext
     {
-        public KursContext()
-            : base("name=KursContext")
+        public KursContext() : base("name=KursContext")
         {
         }
 
