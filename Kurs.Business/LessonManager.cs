@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Kurs.Business
 {
-    class LessonManager : GenericManager<dersler>, ILessonService
+    public class LessonManager : GenericManager<dersler>, ILessonService
     {
         ILessonRepository _lessonRepository;
 
