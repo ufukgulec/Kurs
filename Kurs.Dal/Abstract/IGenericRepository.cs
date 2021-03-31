@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kurs.Dal.Abstract
 {
-    public interface IGenericRepository<T>:IDisposable
+    public interface IGenericRepository<T> : IDisposable where T : class
     {
         /// <summary>
         /// T varlığını ekleme

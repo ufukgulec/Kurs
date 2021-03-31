@@ -55,11 +55,12 @@
     <Compile Include="Abstract\IStudentRepository.cs" />
     <Compile Include="Abstract\ITeacherRepository.cs" />
     <Compile Include="Concrete\EntityFramework\Context\KursContext.cs" />
+    <Compile Include="Concrete\EntityFramework\Repository\EfStudentRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\Repository\EfGenericRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\Repository\EfTeacherRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Concrete\EntityFramework\Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
