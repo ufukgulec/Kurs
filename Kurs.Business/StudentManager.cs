@@ -33,5 +33,10 @@ namespace Kurs.Business
         {
             return _studentRepository.GetAll();
         }
+
+        public List<ogrenciler> StudentIncludeList(string tableName)
+        {
+            return _studentRepository.StudentIncludeList(tableName);
+        }
     }
 }

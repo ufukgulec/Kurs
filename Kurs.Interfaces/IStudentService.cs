@@ -19,5 +19,11 @@ namespace Kurs.Interfaces
         /// </summary>
         /// <returns>List öğrenci</returns>
         List<ogrenciler> InactiveStudentList();
+        /// <summary>
+        /// Öğrenci Tablosuyla adı verilen tabloyu birleştirir.
+        /// </summary>
+        /// <param name="tableName">Tablo adı</param>
+        /// <returns>List öğrenci</returns>
+        List<ogrenciler> StudentIncludeList(string tableName);
     }
 }

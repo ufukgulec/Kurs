@@ -30,5 +30,10 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
         {
             return _context.ogrenciler.ToList();
         }
+
+        public List<ogrenciler> StudentIncludeList(string tableName)
+        {
+            return _context.ogrenciler.Include(tableName).ToList();
+        }
     }
 }
