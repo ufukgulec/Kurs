@@ -10,5 +10,9 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
 {
     public class EfStudentRepository : EfGenericRepository<ogrenciler>, IStudentRepository
     {
+        public EfStudentRepository()
+        {
+            _context = new Context.KursContext();
+        }
     }
 }
