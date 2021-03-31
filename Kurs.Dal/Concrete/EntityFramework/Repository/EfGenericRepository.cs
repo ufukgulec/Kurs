@@ -11,6 +11,10 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
     public class EfGenericRepository<T> : IGenericRepository<T> where T : class
     {
         public KursContext _context;
+        public EfGenericRepository()
+        {
+            _context = new KursContext();
+        }
         /// <summary>
         /// T varlığını ekleme
         /// </summary>
