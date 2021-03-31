@@ -95,11 +95,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
@@ -116,6 +118,7 @@
     <Content Include="Views\Student\List.cshtml" />
     <Content Include="Views\Teacher\List.cshtml" />
     <Content Include="Views\Lesson\List.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
