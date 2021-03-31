@@ -19,7 +19,7 @@ namespace Kurs.Business
         /// <summary>
         /// Aktif öğretmen
         /// </summary>
-        /// <returns>List öğretmen</returns>
+        /// <returns>List Öğretmen</returns>
         public List<ogretmenler> ActiveTeacherList()
         {
             return _teacherRepository.GetAll();
