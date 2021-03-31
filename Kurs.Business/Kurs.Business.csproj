@@ -47,6 +47,10 @@
     <Compile Include="TeacherManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Kurs.Dal\Kurs.Dal.csproj">
+      <Project>{99996165-b41d-4b99-9730-137453429848}</Project>
+      <Name>Kurs.Dal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kurs.Entities\Kurs.Entities.csproj">
       <Project>{211b786c-8ec1-4e7b-8ee2-600e9737f81f}</Project>
       <Name>Kurs.Entities</Name>

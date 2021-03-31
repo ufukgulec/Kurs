@@ -1,4 +1,5 @@
-﻿using Kurs.Interfaces;
+﻿using Kurs.Dal.Abstract;
+using Kurs.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,13 @@ namespace Kurs.Business
 {
     public abstract class GenericManager<T> : IGenericService<T>
     {
+        private readonly IGenericRepository<T> _genericRepository;
+
+        public GenericManager(IGenericRepository<T> genericRepository)
+        {
+            _genericRepository = genericRepository;
+        }
+
         /// <summary>
         /// T varlığını ekleme
         /// </summary>
@@ -17,7 +25,7 @@ namespace Kurs.Business
         /// <returns>T</returns>
         public T Add(T entity)
         {
-            throw new NotImplementedException();
+            return _genericRepository.Add(entity);
         }
         /// <summary>
         /// Id'ye göre varlık silme
@@ -26,7 +34,7 @@ namespace Kurs.Business
         /// <returns>Bool</returns>
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return _genericRepository.Delete(id);
         }
         /// <summary>
         /// T varlığını siler
@@ -35,12 +43,20 @@ namespace Kurs.Business
         /// <returns>Bool</returns>
         public bool Delete(T entity)
         {
-            throw new NotImplementedException();
+            return _genericRepository.Delete(entity);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _genericRepository.Dispose();
+            }
         }
         /// <summary>
         /// Id'ye göre varlık getir
@@ -49,7 +65,7 @@ namespace Kurs.Business
         /// <returns>T</returns>
         public T Get(int id)
         {
-            throw new NotImplementedException();
+            return _genericRepository.Get(id);
         }
         /// <summary>
         /// Tüm T listesi
@@ -57,7 +73,7 @@ namespace Kurs.Business
         /// <returns>T List</returns>
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _genericRepository.GetAll();
         }
         /// <summary>
         /// Filter List T
@@ -66,7 +82,7 @@ namespace Kurs.Business
         /// <returns>T List</returns>
         public List<T> GetAll(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _genericRepository.GetAll(expression);
         }
         /// <summary>
         /// T varlığını dönderir
@@ -75,7 +91,7 @@ namespace Kurs.Business
         /// <returns>T</returns>
         public T Update(T entity)
         {
-            throw new NotImplementedException();
+            return _genericRepository.Update(entity);
         }
     }
 }
