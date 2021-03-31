@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -112,6 +113,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\List.cshtml" />
+    <Content Include="Views\Teacher\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
