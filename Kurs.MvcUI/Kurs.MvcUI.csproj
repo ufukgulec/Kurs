@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -102,6 +103,8 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,8 +114,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kurs.Business\Kurs.Business.csproj">
+      <Project>{dac260a1-44f7-43ef-8651-e4f8bbdf5fb0}</Project>
+      <Name>Kurs.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kurs.Dal\Kurs.Dal.csproj">
+      <Project>{99996165-b41d-4b99-9730-137453429848}</Project>
+      <Name>Kurs.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kurs.Entities\Kurs.Entities.csproj">
+      <Project>{211b786c-8ec1-4e7b-8ee2-600e9737f81f}</Project>
+      <Name>Kurs.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kurs.Interfaces\Kurs.Interfaces.csproj">
+      <Project>{601268a0-0834-4266-97b3-f796b8ff7e85}</Project>
+      <Name>Kurs.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
