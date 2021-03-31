@@ -14,5 +14,21 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
         {
             _context = new Context.KursContext();
         }
+        /// <summary>
+        /// Aktif öğrenciler
+        /// </summary>
+        /// <returns>List öğrenci</returns>
+        public List<ogrenciler> ActiveStudentList()
+        {
+            return _context.ogrenciler.ToList();
+        }
+        /// <summary>
+        /// Pasif öğrenciler
+        /// </summary>
+        /// <returns>List öğrenci</returns>
+        public List<ogrenciler> InactiveStudentList()
+        {
+            return _context.ogrenciler.ToList();
+        }
     }
 }

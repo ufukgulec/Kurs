@@ -9,5 +9,15 @@ namespace Kurs.Dal.Abstract
 {
     public interface ITeacherRepository : IGenericRepository<ogretmenler>
     {
+        /// <summary>
+        /// Aktif öğretmen
+        /// </summary>
+        /// <returns>List Öğretmen</returns>
+        List<ogretmenler> ActiveTeacherList();
+        /// <summary>
+        /// Pasif öğretmen
+        /// </summary>
+        /// <returns>List Öğretmen</returns>
+        List<ogretmenler> InactiveTeacherList();
     }
 }
