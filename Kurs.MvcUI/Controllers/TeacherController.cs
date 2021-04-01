@@ -11,7 +11,13 @@ namespace Kurs.MvcUI.Controllers
 {
     public class TeacherController : Controller
     {
-        ITeacherService teacherService = new TeacherManager(new EfTeacherRepository());
+        ITeacherService teacherService;
+
+        public TeacherController(ITeacherService teacherService)
+        {
+            this.teacherService = teacherService;
+        }
+
         public ActionResult Index()
         {
             return View();

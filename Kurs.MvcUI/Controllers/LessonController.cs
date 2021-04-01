@@ -11,7 +11,13 @@ namespace Kurs.MvcUI.Controllers
 {
     public class LessonController : Controller
     {
-        ILessonService lessonService = new LessonManager(new EfLessonRepository());
+        ILessonService lessonService;
+
+        public LessonController(ILessonService lessonService)
+        {
+            this.lessonService = lessonService;
+        }
+
         public ActionResult Index()
         {
             return View();

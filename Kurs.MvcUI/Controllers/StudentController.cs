@@ -11,7 +11,13 @@ namespace Kurs.MvcUI.Controllers
 {
     public class StudentController : Controller
     {
-        IStudentService studentService = new StudentManager(new EfStudentRepository());
+        IStudentService studentService;
+
+        public StudentController(IStudentService studentService)
+        {
+            this.studentService = studentService;
+        }
+
         public ActionResult Index()
         {
             return View();

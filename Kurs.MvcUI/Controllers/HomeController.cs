@@ -12,11 +12,19 @@ namespace Kurs.MvcUI.Controllers
 {
     public class HomeController : Controller
     {
-        ILessonService lessonService = new LessonManager(new EfLessonRepository());
-        IStudentService studentService = new StudentManager(new EfStudentRepository());
-        ITeacherService teacherService = new TeacherManager(new EfTeacherRepository());
+        ILessonService lessonService;
+        IStudentService studentService;
+        ITeacherService teacherService;
         IGenericService<veliler> parentService = new GenericManager<veliler>(new EfGenericRepository<veliler>());
         IGenericService<dersSecimleri> lessonSelectionService = new GenericManager<dersSecimleri>(new EfGenericRepository<dersSecimleri>());
+
+        public HomeController(ILessonService lessonService, IStudentService studentService, ITeacherService teacherService)
+        {
+            this.lessonService = lessonService;
+            this.studentService = studentService;
+            this.teacherService = teacherService;
+        }
+
         public ActionResult Index()
         {
             ViewBag.StudentCount = studentService.Count();
