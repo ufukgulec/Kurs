@@ -21,6 +21,7 @@ namespace Kurs.MvcUI.Controllers
             ViewBag.LessonCount = lessonService.GetAll().Count;
 
             ViewBag.LastStudent = studentService.GetAll().OrderByDescending(s => s.kayitTarihi).FirstOrDefault().ogrenciAdi;
+            ViewBag.deneme = studentService.GetAll("dersSecimleri").ToList();
             return View();
         }
     }

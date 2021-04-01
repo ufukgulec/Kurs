@@ -76,24 +76,6 @@ namespace Kurs.Business
             return _genericRepository.GetAll();
         }
         /// <summary>
-        /// Filter List T
-        /// </summary>
-        /// <param name="expression"></param>
-        /// <returns>T List</returns>
-        public List<T> GetAll(Expression<Func<T, bool>> expression)
-        {
-            return _genericRepository.GetAll(expression);
-        }
-        /// <summary>
-        /// T varlığını dönderir
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns>T</returns>
-        public T Update(T entity)
-        {
-            return _genericRepository.Update(entity);
-        }
-        /// <summary>
         /// Include List
         /// </summary>
         /// <param name="TableName">Birleşecek Tablo</param>
@@ -112,5 +94,34 @@ namespace Kurs.Business
         {
             return _genericRepository.GetAll(TableName1, TableName2);
         }
+        /// <summary>
+        /// Filter List T
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns>T List</returns>
+        public List<T> GetAll(Expression<Func<T, bool>> expression)
+        {
+            return _genericRepository.GetAll(expression);
+        }
+        /// <summary>
+        /// Expression Include List
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns>T List</returns>
+        public List<T> IncludeGetAll(Expression<Func<T, bool>> expression)
+        {
+            return _genericRepository.IncludeGetAll(expression);
+        }
+        /// <summary>
+        /// T varlığını dönderir
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>T</returns>
+        public T Update(T entity)
+        {
+            return _genericRepository.Update(entity);
+        }
+
+
     }
 }

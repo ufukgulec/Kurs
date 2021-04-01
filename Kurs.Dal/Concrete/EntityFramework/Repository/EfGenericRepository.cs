@@ -2,6 +2,7 @@
 using Kurs.Dal.Concrete.EntityFramework.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
@@ -76,6 +77,25 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
             return _context.Set<T>().AsNoTracking().ToList();
         }
         /// <summary>
+        /// Include List
+        /// </summary>
+        /// <param name="TableName">Birleşecek Tablo</param>
+        /// <returns>T list</returns>
+        public List<T> GetAll(string TableName)
+        {
+            return _context.Set<T>().Include(TableName).AsNoTracking().ToList();
+        }
+        /// <summary>
+        /// Ara tablolar Include
+        /// </summary>
+        /// <param name="TableName1">İlişkili Tablo 1</param>
+        /// <param name="TableName2">İlişkili Tablo 2</param>
+        /// <returns>List T</returns>
+        public List<T> GetAll(string TableName1, string TableName2)
+        {
+            return _context.Set<T>().Include(TableName1).Include(TableName2).ToList();
+        }
+        /// <summary>
         /// Filter List T
         /// </summary>
         /// <param name="expression"></param>
@@ -83,6 +103,15 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
         public List<T> GetAll(Expression<Func<T, bool>> expression)
         {
             return _context.Set<T>().AsNoTracking().Where(expression).ToList();
+        }
+        /// <summary>
+        /// Expression Include List
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns>T list</returns>
+        public List<T> IncludeGetAll(Expression<Func<T, bool>> expression)
+        {
+            return _context.Set<T>().Include(expression).AsNoTracking().ToList();
         }
         /// <summary>
         /// T varlığını dönderir
@@ -94,25 +123,6 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
             _context.Set<T>().AddOrUpdate(entity);
             _context.SaveChanges();
             return entity;
-        }
-        /// <summary>
-        /// Include List
-        /// </summary>
-        /// <param name="TableName">Birleşecek Tablo</param>
-        /// <returns>T list</returns>
-        public List<T> GetAll(string TableName)
-        {
-            return _context.Set<T>().Include(TableName).ToList();
-        }
-        /// <summary>
-        /// Ara tablolar Include
-        /// </summary>
-        /// <param name="TableName1">İlişkili Tablo 1</param>
-        /// <param name="TableName2">İlişkili Tablo 2</param>
-        /// <returns>List T</returns>
-        public List<T> GetAll(string TableName1, string TableName2)
-        {
-            return _context.Set<T>().Include(TableName1).Include(TableName2).ToList();
         }
     }
 }

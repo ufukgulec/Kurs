@@ -46,6 +46,12 @@ namespace Kurs.Dal.Abstract
         /// <returns>List T</returns>
         List<T> GetAll(string TableName1, string TableName2);
         /// <summary>
+        /// Expression Include List
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns>List T</returns>
+        List<T> IncludeGetAll(Expression<Func<T, bool>> expression);
+        /// <summary>
         /// Id'ye göre varlık silme
         /// </summary>
         /// <param name="id"></param>
