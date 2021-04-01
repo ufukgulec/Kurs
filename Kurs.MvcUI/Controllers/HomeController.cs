@@ -1,5 +1,6 @@
 ﻿using Kurs.Business;
 using Kurs.Dal.Concrete.EntityFramework.Repository;
+using Kurs.Entities.Models;
 using Kurs.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,20 @@ namespace Kurs.MvcUI.Controllers
         ILessonService lessonService = new LessonManager(new EfLessonRepository());
         IStudentService studentService = new StudentManager(new EfStudentRepository());
         ITeacherService teacherService = new TeacherManager(new EfTeacherRepository());
+        IGenericService<veliler> parentService = new GenericManager<veliler>(new EfGenericRepository<veliler>());
+        IGenericService<dersSecimleri> lessonSelectionService = new GenericManager<dersSecimleri>(new EfGenericRepository<dersSecimleri>());
         public ActionResult Index()
         {
             ViewBag.StudentCount = studentService.GetAll().Count;
             ViewBag.TeacherCount = teacherService.GetAll().Count;
             ViewBag.LessonCount = lessonService.GetAll().Count;
-
             ViewBag.LastStudent = studentService.GetAll().OrderByDescending(s => s.kayitTarihi).FirstOrDefault().ogrenciAdi;
-            ViewBag.deneme = studentService.GetAll("dersSecimleri").ToList();
+            ViewBag.ParentCount = parentService.GetAll().Count();
+
+            ViewBag.MostExpensiveLesson = lessonService.GetAll().OrderByDescending(x => x.ücret).FirstOrDefault().dersAdi;
+            ViewBag.MostCheapLesson = lessonService.GetAll().OrderBy(x => x.ücret).FirstOrDefault().dersAdi;
+            ViewBag.MostSelectionStudent = studentService.GetAll().OrderByDescending(x => x.dersSecimleri.Count).FirstOrDefault().ogrenciAdi;
+            ViewBag.MostSelectionLesson = lessonService.GetAll().OrderByDescending(x => x.dersSecimleri.Count).FirstOrDefault().dersAdi;
             return View();
         }
     }
