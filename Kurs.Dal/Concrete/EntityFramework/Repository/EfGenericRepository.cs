@@ -95,5 +95,24 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
             _context.SaveChanges();
             return entity;
         }
+        /// <summary>
+        /// Include List
+        /// </summary>
+        /// <param name="TableName">Birleşecek Tablo</param>
+        /// <returns>T list</returns>
+        public List<T> GetAll(string TableName)
+        {
+            return _context.Set<T>().Include(TableName).ToList();
+        }
+        /// <summary>
+        /// Ara tablolar Include
+        /// </summary>
+        /// <param name="TableName1">İlişkili Tablo 1</param>
+        /// <param name="TableName2">İlişkili Tablo 2</param>
+        /// <returns>List T</returns>
+        public List<T> GetAll(string TableName1, string TableName2)
+        {
+            return _context.Set<T>().Include(TableName1).Include(TableName2).ToList();
+        }
     }
 }

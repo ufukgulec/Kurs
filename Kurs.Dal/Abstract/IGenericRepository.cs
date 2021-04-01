@@ -33,6 +33,19 @@ namespace Kurs.Dal.Abstract
         /// <returns>T List</returns>
         List<T> GetAll(Expression<Func<T, bool>> expression);
         /// <summary>
+        /// Include List
+        /// </summary>
+        /// <param name="TableName">Birleşecek Tablo</param>
+        /// <returns>T list</returns>
+        List<T> GetAll(string TableName);
+        /// <summary>
+        /// Ara tablolar Include
+        /// </summary>
+        /// <param name="TableName1">İlişkili Tablo 1</param>
+        /// <param name="TableName2">İlişkili Tablo 2</param>
+        /// <returns>List T</returns>
+        List<T> GetAll(string TableName1, string TableName2);
+        /// <summary>
         /// Id'ye göre varlık silme
         /// </summary>
         /// <param name="id"></param>
