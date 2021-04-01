@@ -17,7 +17,6 @@ namespace Kurs.MvcUI.Controllers
         ITeacherService teacherService;
         IGenericService<veliler> parentService = new GenericManager<veliler>(new EfGenericRepository<veliler>());
         IGenericService<dersSecimleri> lessonSelectionService = new GenericManager<dersSecimleri>(new EfGenericRepository<dersSecimleri>());
-
         public HomeController(ILessonService lessonService, IStudentService studentService, ITeacherService teacherService)
         {
             this.lessonService = lessonService;
@@ -31,7 +30,6 @@ namespace Kurs.MvcUI.Controllers
             ViewBag.TeacherCount = teacherService.Count();
             ViewBag.LessonCount = lessonService.Count();
             ViewBag.ParentCount = parentService.Count();
-            ViewBag.LastStudent = studentService.GetAll().OrderByDescending(s => s.kayitTarihi).FirstOrDefault().ogrenciAdi;
 
 
             ViewBag.MostExpensiveLesson = lessonService.GetAll().OrderByDescending(x => x.ücret).FirstOrDefault().dersAdi;
