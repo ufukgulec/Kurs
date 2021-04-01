@@ -1,0 +1,65 @@
+﻿@model Kurs.Entities.Models.ogrenciler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ogrenciAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ogrenciAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ogrenciSoyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ogrenciSoyadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kayitTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kayitTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ogrenciEposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ogrenciEposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ogrenciTel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ogrenciTel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dogumTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dogumTarihi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ogrenciID }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Back to List", "List", null, new { @class = "btn btn-primary" })
+</p>

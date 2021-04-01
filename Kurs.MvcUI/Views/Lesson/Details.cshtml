@@ -1,0 +1,33 @@
+﻿@model Kurs.Entities.Models.dersler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dersAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dersAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ücret)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ücret)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.dersID }, new { @class = "btn btn-primary" }) 
+    @Html.ActionLink("Back to List", "List", null, new { @class = "btn btn-primary" })
+</p>
