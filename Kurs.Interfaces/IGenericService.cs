@@ -22,6 +22,11 @@ namespace Kurs.Interfaces
         /// <returns>T</returns>
         T Get(int id);
         /// <summary>
+        /// List Count
+        /// </summary>
+        /// <returns>Veri sayısı</returns>
+        int Count();
+        /// <summary>
         /// Tüm T listesi
         /// </summary>
         /// <returns>T List</returns>

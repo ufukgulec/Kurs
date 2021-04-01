@@ -124,5 +124,13 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
             _context.SaveChanges();
             return entity;
         }
+        /// <summary>
+        /// List Count
+        /// </summary>
+        /// <returns>Veri sayısı</returns>
+        public int Count()
+        {
+            return GetAll().Count;
+        }
     }
 }

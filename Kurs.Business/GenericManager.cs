@@ -122,6 +122,9 @@ namespace Kurs.Business
             return _genericRepository.Update(entity);
         }
 
-
+        public int Count()
+        {
+            return _genericRepository.Count();
+        }
     }
 }

@@ -19,11 +19,12 @@ namespace Kurs.MvcUI.Controllers
         IGenericService<dersSecimleri> lessonSelectionService = new GenericManager<dersSecimleri>(new EfGenericRepository<dersSecimleri>());
         public ActionResult Index()
         {
-            ViewBag.StudentCount = studentService.GetAll().Count;
-            ViewBag.TeacherCount = teacherService.GetAll().Count;
-            ViewBag.LessonCount = lessonService.GetAll().Count;
+            ViewBag.StudentCount = studentService.Count();
+            ViewBag.TeacherCount = teacherService.Count();
+            ViewBag.LessonCount = lessonService.Count();
+            ViewBag.ParentCount = parentService.Count();
             ViewBag.LastStudent = studentService.GetAll().OrderByDescending(s => s.kayitTarihi).FirstOrDefault().ogrenciAdi;
-            ViewBag.ParentCount = parentService.GetAll().Count();
+
 
             ViewBag.MostExpensiveLesson = lessonService.GetAll().OrderByDescending(x => x.ücret).FirstOrDefault().dersAdi;
             ViewBag.MostCheapLesson = lessonService.GetAll().OrderBy(x => x.ücret).FirstOrDefault().dersAdi;
