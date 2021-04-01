@@ -121,10 +121,31 @@ namespace Kurs.Business
         {
             return _genericRepository.Update(entity);
         }
-
+        /// <summary>
+        /// List Count
+        /// </summary>
+        /// <returns>Veri sayısı</returns>
         public int Count()
         {
             return _genericRepository.Count();
         }
+        ///// <summary>
+        ///// Filtreye göre artan sıralar
+        ///// </summary>
+        ///// <param name="expression"></param>
+        ///// <returns>T</returns>
+        //public T OrderBy(Expression<Func<T, object>> expression)
+        //{
+        //    return _genericRepository.OrderBy(expression);
+        //}
+        ///// <summary>
+        ///// Filtreye göre azalan sıralar
+        ///// </summary>
+        ///// <param name="expression"></param>
+        ///// <returns>T</returns>
+        //public T OrderByDescending(Expression<Func<T, object>> expression)
+        //{
+        //    return _genericRepository.OrderByDescending(expression);
+        //}
     }
 }

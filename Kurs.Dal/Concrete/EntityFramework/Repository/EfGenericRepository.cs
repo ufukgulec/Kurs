@@ -132,5 +132,23 @@ namespace Kurs.Dal.Concrete.EntityFramework.Repository
         {
             return GetAll().Count;
         }
+        ///// <summary>
+        ///// Filtreye göre artan sıralar
+        ///// </summary>
+        ///// <param name="expression"></param>
+        ///// <returns>T</returns>
+        //public T OrderBy(Expression<Func<T, object>> expression)
+        //{
+        //    return _context.Set<T>().OrderBy(expression).AsNoTracking().ToList().FirstOrDefault();
+        //}
+        ///// <summary>
+        ///// Filtreye göre azalan sıralar
+        ///// </summary>
+        ///// <param name="expression"></param>
+        ///// <returns>T</returns>
+        //public T OrderByDescending(Expression<Func<T, object>> expression)
+        //{
+        //    return _context.Set<T>().OrderByDescending(expression).ToList().FirstOrDefault();
+        //}
     }
 }

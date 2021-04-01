@@ -74,5 +74,17 @@ namespace Kurs.Dal.Abstract
         /// <param name="entity"></param>
         /// <returns>T</returns>
         T Update(T entity);
+        ///// <summary>
+        ///// Filtreye göre artan sıralar
+        ///// </summary>
+        ///// <param name="expression"></param>
+        ///// <returns>T</returns>
+        //T OrderBy(Expression<Func<T, object>> expression);
+        ///// <summary>
+        ///// Filtreye göre azalan sıralar
+        ///// </summary>
+        ///// <param name="expression"></param>
+        ///// <returns>T</returns>
+        //T OrderByDescending(Expression<Func<T, object>> expression);
     }
 }
